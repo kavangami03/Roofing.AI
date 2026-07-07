@@ -24,54 +24,59 @@ export function SiteHeader() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 z-50 mx-auto w-[calc(100%-2rem)] border border-border bg-white/90 shadow-elegant backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           scrolled
-            ? "border-b border-border/70 bg-background/80 backdrop-blur-xl"
-            : "border-b border-transparent bg-transparent"
+            ? "top-3 max-w-[1280px] rounded-[16px] py-2 px-5 shadow-lift"
+            : "top-4 max-w-[1720px] rounded-[20px] py-3.5 px-6"
         }`}
       >
-        <div className="container-page flex h-16 items-center justify-between gap-6 md:h-[72px]">
-          <a href="#top" className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-6">
+          <a href="#top" className="flex items-center gap-2.5">
             <Logo />
-            <span className="text-[17px] font-semibold tracking-tight text-ink">
+            <span className="text-[16px] font-semibold tracking-tight text-[#111111]">
               SuperMIA
             </span>
           </a>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1.5 lg:flex">
             {nav.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3.5 py-2 text-[14px] font-medium text-ink-muted transition-colors hover:bg-secondary hover:text-ink"
+                className="group relative rounded-full py-1.5 px-4 text-[13.5px] font-medium text-[#5F5F5F] transition-all duration-300 hover:text-[#111111]"
               >
+                <span className="absolute inset-0 -z-10 scale-90 rounded-full bg-[#F3F2EE] opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100" />
                 {item.label}
               </a>
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <a
               href="#login"
-              className="rounded-full px-4 py-2 text-[14px] font-medium text-ink-muted transition-colors hover:text-ink"
+              className="group relative rounded-full py-1.5 px-4 text-[13.5px] font-medium text-[#5F5F5F] transition-all duration-300 hover:text-[#111111]"
             >
+              <span className="absolute inset-0 -z-10 scale-90 rounded-full bg-[#F3F2EE] opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100" />
               Sign in
             </a>
             <a
               href="#demo"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-[14px] font-semibold text-accent-foreground shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift"
+              className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-[12px] bg-primary px-5 h-[40px] text-[13.5px] font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5"
             >
-              Book a demo
-              <PhoneCall className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
+              <span className="relative z-10 flex items-center gap-1.5 text-white group-hover:text-primary transition-colors duration-300">
+                Book a demo
+                <PhoneCall className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
             </a>
           </div>
 
           <button
             aria-label="Open menu"
             onClick={() => setOpen(true)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white text-ink lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-[10px] border border-border bg-white text-[#111111] transition-transform hover:scale-105 active:scale-95 lg:hidden"
           >
-            <Menu className="h-5 w-5" />
+            <Menu className="h-4.5 w-4.5" />
           </button>
         </div>
       </header>
@@ -84,9 +89,9 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} />
+            <div className="absolute inset-0 bg-[#191919]/45 backdrop-blur-sm" onClick={() => setOpen(false)} />
             <motion.aside
-              className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white p-6"
+              className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-white p-6 shadow-lift"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -95,12 +100,12 @@ export function SiteHeader() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Logo />
-                  <span className="font-semibold text-ink">SuperMIA</span>
+                  <span className="font-semibold text-[#111111]">SuperMIA</span>
                 </div>
                 <button
                   aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border text-[#111111]"
                 >
                   <X className="h-5 w-5" />
                 </button>
@@ -114,7 +119,7 @@ export function SiteHeader() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 + i * 0.04 }}
-                    className="border-b border-border py-4 text-2xl font-semibold tracking-tight text-ink"
+                    className="border-b border-border py-4 text-2xl font-semibold tracking-tight text-[#111111]"
                   >
                     {item.label}
                   </motion.a>
@@ -123,15 +128,23 @@ export function SiteHeader() {
               <div className="mt-auto flex flex-col gap-3 pt-6">
                 <a
                   href="#demo"
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-card"
+                  onClick={() => setOpen(false)}
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-[14px] bg-primary h-[56px] text-sm font-semibold text-white shadow-sm transition-all"
                 >
-                  Book a demo
+                  <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
+                  <span className="relative z-10 text-white group-hover:text-primary transition-colors duration-300">
+                    Book a demo
+                  </span>
                 </a>
                 <a
                   href="#login"
-                  className="inline-flex items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-semibold text-ink"
+                  onClick={() => setOpen(false)}
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-[14px] border border-primary bg-transparent h-[56px] text-sm font-semibold text-primary transition-all"
                 >
-                  Sign in
+                  <span className="absolute inset-0 translate-y-full bg-background transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
+                  <span className="relative z-10 text-primary transition-colors duration-300">
+                    Sign in
+                  </span>
                 </a>
               </div>
             </motion.aside>
@@ -144,11 +157,11 @@ export function SiteHeader() {
 
 function Logo() {
   return (
-    <div className="relative grid h-8 w-8 place-items-center rounded-[10px] bg-ink text-white shadow-card">
+    <div className="relative grid h-8 w-8 place-items-center rounded-[10px] bg-primary text-white shadow-card">
       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
         <path d="M4 12L12 4l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M6 12v7h12v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="12" cy="14" r="1.5" fill="#F97316" />
+        <circle cx="12" cy="14" r="1.5" fill="#C8A86B" />
       </svg>
     </div>
   );

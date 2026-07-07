@@ -38,7 +38,7 @@ const compareRows = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="bg-background py-24 sm:py-32">
+    <section id="pricing" className="bg-surface-alt py-24 sm:py-32">
       <div className="container-page">
         <SectionHeading
           align="center"
@@ -51,14 +51,14 @@ export function Pricing() {
           {plans.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.07}>
               <div
-                className={`relative flex h-full flex-col rounded-3xl border p-7 transition-all hover:-translate-y-0.5 ${
+                className={`relative flex h-full flex-col rounded-[16px] border p-7 transition-all ${
                   p.highlight
-                    ? "border-ink bg-ink text-white shadow-lift"
-                    : "border-border bg-white text-ink shadow-card"
+                    ? "border-accent bg-white text-ink shadow-lift hover:-translate-y-1"
+                    : "border-border bg-white text-ink shadow-card hover:-translate-y-1 hover:border-accent hover:shadow-lift"
                 }`}
               >
                 {p.highlight && (
-                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1 rounded-full bg-accent px-3 py-1 text-[11px] font-semibold text-accent-foreground shadow-card">
+                  <span className="absolute -top-3 left-1/2 inline-flex -translate-x-1/2 items-center gap-1 rounded-full bg-accent px-3 py-1 text-[11px] font-semibold text-primary shadow-card">
                     <Sparkles className="h-3 w-3" /> Most popular
                   </span>
                 )}
@@ -66,27 +66,36 @@ export function Pricing() {
                   <p className={`text-[13px] font-semibold uppercase tracking-wider ${p.highlight ? "text-accent" : "text-ink-muted"}`}>{p.name}</p>
                   <div className="mt-3 flex items-baseline gap-1">
                     <span className="text-[42px] font-semibold tracking-tight">{p.price}</span>
-                    {p.period && <span className={`text-[14px] ${p.highlight ? "text-white/60" : "text-ink-muted"}`}>{p.period}</span>}
+                    {p.period && <span className="text-[14px] text-ink-muted">{p.period}</span>}
                   </div>
-                  <p className={`mt-3 text-[14px] ${p.highlight ? "text-white/75" : "text-ink-muted"}`}>{p.desc}</p>
+                  <p className="mt-3 text-[14px] text-ink-muted">{p.desc}</p>
                 </div>
                 <ul className="mt-6 flex-1 space-y-3">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5 text-[14px]">
-                      <Check className={`mt-0.5 h-4 w-4 shrink-0 ${p.highlight ? "text-accent" : "text-success"}`} />
-                      <span className={p.highlight ? "text-white/90" : "text-ink"}>{f}</span>
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-success" />
+                      <span className="text-ink">{f}</span>
                     </li>
                   ))}
                 </ul>
                 <a
                   href="#demo"
-                  className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-[14px] font-semibold transition-all ${
+                  className={`group relative mt-8 inline-flex items-center justify-center overflow-hidden px-6 text-[15px] font-semibold transition-all rounded-[14px] h-[56px] hover:-translate-y-0.5 ${
                     p.highlight
-                      ? "bg-accent text-accent-foreground hover:-translate-y-0.5 hover:shadow-lift"
-                      : "border border-border bg-white text-ink hover:border-ink"
+                      ? "bg-primary text-white shadow-sm"
+                      : "border border-primary bg-transparent text-primary"
                   }`}
                 >
-                  {p.name === "Enterprise" ? "Talk to sales" : "Start free trial"}
+                  <span className={`absolute inset-0 translate-y-full transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 ${
+                    p.highlight ? "bg-accent" : "bg-background"
+                  }`} />
+                  <span className={`relative z-10 transition-colors duration-300 ${
+                    p.highlight
+                      ? "text-white group-hover:text-primary"
+                      : "text-primary"
+                  }`}>
+                    {p.name === "Enterprise" ? "Talk to sales" : "Start free trial"}
+                  </span>
                 </a>
               </div>
             </Reveal>

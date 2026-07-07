@@ -13,7 +13,7 @@ const data = [
 
 export function DashboardPreview() {
   return (
-    <section id="dashboard" className="bg-background py-24 sm:py-32">
+    <section id="dashboard" className="bg-surface-alt py-24 sm:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Live Ops Console"
@@ -22,7 +22,7 @@ export function DashboardPreview() {
         />
 
         <Reveal delay={0.05} className="mt-14">
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-elegant">
+          <div className="overflow-hidden rounded-[16px] border border-border bg-white shadow-elegant transition-all hover:border-accent hover:shadow-lift">
             {/* Top bar */}
             <div className="flex items-center justify-between border-b border-border bg-surface-alt/60 px-5 py-3">
               <div className="flex items-center gap-1.5">

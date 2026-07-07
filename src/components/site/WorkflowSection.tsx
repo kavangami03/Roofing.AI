@@ -35,7 +35,7 @@ export function WorkflowSection() {
                 transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="relative flex flex-col items-center text-center"
               >
-                <div className="relative grid h-24 w-24 place-items-center rounded-2xl border border-border bg-white shadow-card">
+                <div className="relative grid h-24 w-24 place-items-center rounded-[16px] border border-border bg-white shadow-card">
                   <span className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-ink px-2 py-0.5 text-[10px] font-semibold text-white">
                     {String(i + 1).padStart(2, "0")}
                   </span>

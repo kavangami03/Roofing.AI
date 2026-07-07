@@ -30,11 +30,11 @@ export function SectionHeading({
       className={`flex max-w-3xl flex-col gap-5 ${align === "center" ? "mx-auto items-center text-center" : ""}`}
     >
       {eyebrow && <SectionEyebrow>{eyebrow}</SectionEyebrow>}
-      <h2 className="text-balance text-[34px] font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-[44px] lg:text-[52px]">
+      <h2 className="text-balance text-[34px] font-semibold leading-[1.08] tracking-[-0.02em] text-[#111111] sm:text-[44px] lg:text-[52px]">
         {title}
       </h2>
       {description && (
-        <p className="text-balance text-[17px] leading-[1.6] text-ink-muted sm:text-[18px]">
+        <p className="text-balance text-[17px] leading-[1.65] text-[#5F5F5F] sm:text-[18px]">
           {description}
         </p>
       )}

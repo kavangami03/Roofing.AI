@@ -15,14 +15,14 @@ const faqs = [
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="bg-surface-alt py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-32">
       <div className="container-page grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
         <SectionHeading
           eyebrow="FAQ"
           title={<>Answers, before you have to ask.</>}
           description="Still curious? Book a demo — we’ll walk your ops team through the whole thing in 25 minutes."
         />
-        <div className="divide-y divide-border overflow-hidden rounded-3xl border border-border bg-white shadow-card">
+        <div className="divide-y divide-border overflow-hidden rounded-[16px] border border-border bg-white shadow-card transition-all hover:border-accent hover:shadow-lift">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (

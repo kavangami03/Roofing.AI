@@ -4,7 +4,7 @@ import { SectionHeading } from "./Section";
 
 export function FeaturesBento() {
   return (
-    <section className="bg-surface-alt py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Built for Roofing"
@@ -74,7 +74,7 @@ function Card({ children, className = "" }: { children: React.ReactNode; classNa
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55 }}
-      className={`group relative overflow-hidden rounded-2xl border border-border bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lift ${className}`}
+      className={`group relative overflow-hidden rounded-[16px] border border-border bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:border-accent hover:shadow-lift ${className}`}
     >
       {children}
     </motion.div>

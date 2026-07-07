@@ -12,7 +12,7 @@ export function CaseStudy() {
         />
 
         <Reveal className="mt-14">
-          <div className="grid overflow-hidden rounded-3xl border border-border bg-white shadow-elegant lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+          <div className="grid overflow-hidden rounded-[16px] border border-border bg-white shadow-elegant transition-all hover:border-accent hover:shadow-lift lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
             <div className="flex flex-col justify-between gap-10 p-8 sm:p-10 lg:p-12">
               <div>
                 <div className="flex items-center gap-3">

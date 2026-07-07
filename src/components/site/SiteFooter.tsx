@@ -7,15 +7,15 @@ const cols = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink text-white/80">
+    <footer className="bg-primary text-white/80">
       <div className="container-page grid gap-12 py-16 md:grid-cols-6">
         <div className="md:col-span-2 flex flex-col gap-5">
           <div className="flex items-center gap-2">
-            <div className="grid h-8 w-8 place-items-center rounded-[10px] bg-white text-ink">
+            <div className="grid h-8 w-8 place-items-center rounded-[10px] bg-white text-primary">
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
                 <path d="M4 12L12 4l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M6 12v7h12v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="12" cy="14" r="1.5" fill="#F97316" />
+                <circle cx="12" cy="14" r="1.5" fill="#C8A86B" />
               </svg>
             </div>
             <span className="text-[17px] font-semibold text-white">SuperMIA</span>
@@ -31,10 +31,10 @@ export function SiteFooter() {
         </div>
         {cols.map((c) => (
           <div key={c.title}>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-white/50">{c.title}</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-white/40">{c.title}</p>
             <ul className="mt-4 space-y-2.5">
               {c.links.map((l) => (
-                <li key={l}><a href="#" className="text-[14px] text-white/75 transition-colors hover:text-white">{l}</a></li>
+                <li key={l}><a href="#" className="text-[14px] text-white/75 transition-colors hover:text-accent">{l}</a></li>
               ))}
             </ul>
           </div>
@@ -44,10 +44,10 @@ export function SiteFooter() {
         <div className="container-page flex flex-col items-start justify-between gap-4 py-6 text-[12.5px] text-white/50 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} SuperMIA, Inc. Built for roofers.</p>
           <div className="flex flex-wrap gap-5">
-            <a href="#" className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Security</a>
-            <a href="#" className="hover:text-white">Cookies</a>
+            <a href="#" className="hover:text-accent">Privacy</a>
+            <a href="#" className="hover:text-accent">Terms</a>
+            <a href="#" className="hover:text-accent">Security</a>
+            <a href="#" className="hover:text-accent">Cookies</a>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ export function ROICalculator() {
   }, [calls, missedPct, jobValue, closeRate]);
 
   return (
-    <section id="roi" className="bg-surface-alt py-24 sm:py-32">
+    <section id="roi" className="bg-white py-24 sm:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="ROI Calculator"
@@ -62,7 +62,7 @@ function Slider({
         <label className="text-[13px] font-medium text-ink-muted">{label}</label>
         <span className="text-[18px] font-semibold text-ink">{format(value)}</span>
       </div>
-      <div className="relative mt-3 h-2 rounded-full bg-secondary">
+      <div className="relative mt-3 h-2 rounded-full bg-border">
         <div className="absolute inset-y-0 left-0 rounded-full bg-accent" style={{ width: `${pct}%` }} />
         <input
           type="range"
@@ -92,15 +92,15 @@ function ResultCard({
   label: string; value: number; note: string; highlight?: boolean;
 }) {
   const toneCls =
-    tone === "danger" ? "bg-white border-border" :
-    tone === "accent" ? "bg-accent text-accent-foreground border-accent" :
-    "bg-ink text-white border-ink";
+    tone === "danger" ? "bg-white border-border text-ink" :
+    tone === "accent" ? "bg-accent text-primary border-accent" :
+    "bg-primary text-white border-primary";
   const chipCls =
     tone === "danger" ? "bg-danger/10 text-danger" :
-    tone === "accent" ? "bg-white/20 text-white" :
+    tone === "accent" ? "bg-primary/10 text-primary" :
     "bg-white/10 text-white";
-  const noteCls = tone === "danger" ? "text-ink-muted" : "text-white/70";
-  const labelCls = tone === "danger" ? "text-ink-muted" : tone === "accent" ? "text-white/80" : "text-white/70";
+  const noteCls = tone === "danger" ? "text-ink-muted" : tone === "accent" ? "text-primary/70" : "text-white/70";
+  const labelCls = tone === "danger" ? "text-ink-muted" : tone === "accent" ? "text-primary/80" : "text-white/80";
 
   return (
     <motion.div
@@ -117,7 +117,7 @@ function ResultCard({
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className={`mt-1 text-[30px] font-semibold tracking-tight ${tone === "danger" ? "text-ink" : ""}`}
+          className={`mt-1 text-[30px] font-semibold tracking-tight ${tone === "danger" ? "text-ink" : tone === "accent" ? "text-primary" : "text-white"}`}
         >
           ${value.toLocaleString()}
         </motion.p>

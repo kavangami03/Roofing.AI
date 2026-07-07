@@ -11,7 +11,7 @@ const t = [
 
 export function Testimonials() {
   return (
-    <section className="bg-surface-alt py-24 sm:py-32">
+    <section className="bg-white py-24 sm:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Operators talking"
@@ -20,7 +20,7 @@ export function Testimonials() {
         <Reveal className="mt-12">
           <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4 [&>*]:break-inside-avoid">
             {t.map((x) => (
-              <figure key={x.n} className="rounded-2xl border border-border bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-lift">
+              <figure key={x.n} className="rounded-[16px] border border-border bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:border-accent hover:shadow-lift">
                 <div className="flex items-center gap-0.5 text-accent">
                   {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
                 </div>
