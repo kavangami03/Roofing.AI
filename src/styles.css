@@ -177,27 +177,27 @@
 
 @utility container-page {
   width: 100%;
-  max-width: 1600px;
+  max-width: 1920px;
   margin-inline: auto;
   padding-inline: 1.25rem;
   @media (min-width: 768px) {
     padding-inline: 3rem;
   }
   @media (min-width: 1280px) {
-    padding-inline: 5rem;
+    padding-inline: 6.25rem;
   }
 }
 
 @utility container-content {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1920px;
   margin-inline: auto;
   padding-inline: 1.25rem;
   @media (min-width: 768px) {
     padding-inline: 3rem;
   }
   @media (min-width: 1280px) {
-    padding-inline: 5rem;
+    padding-inline: 6.25rem;
   }
 }
 
