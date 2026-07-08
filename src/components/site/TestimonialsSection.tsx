@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Star, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -28,6 +28,14 @@ export function TestimonialsSection() {
       color: "bg-slate-800"
     }
   ];
+
+  // Auto-rotate every 5 seconds. Restart timer if user manually clicks.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [active, testimonials.length]);
 
   return (
     <section className="py-12 lg:py-16 bg-white border-t border-slate-200">
