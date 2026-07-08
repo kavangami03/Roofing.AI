@@ -13,7 +13,7 @@ export function AutomationSection() {
         {/* Editorial Header */}
         <div className="max-w-3xl mb-10 mx-auto text-center">
           <div className="inline-flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-border shadow-sm text-ink-muted text-[11px] font-bold uppercase tracking-widest mb-4">
-            <Zap className="w-3 h-3 text-emerald-500 fill-emerald-500" /> Automation
+            <Zap className="w-3 h-3 text-accent fill-accent" /> Automation
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-ink mb-4 leading-[1.1]">
@@ -45,12 +45,12 @@ export function AutomationSection() {
               {/* Text Body */}
               <div className="p-5 flex flex-col flex-1">
                  <div className="flex items-center gap-3 mb-3">
-                   <div className="h-8 w-8 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                   <div className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <CalendarClock className="w-4 h-4" />
                    </div>
                    <h3 className="text-[17px] font-bold text-ink">Inspection booked</h3>
                  </div>
-                 <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2 bg-emerald-50 w-fit px-2 py-1 rounded border border-emerald-100">While your crew works</p>
+                 <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2 bg-accent/10 w-fit px-2 py-1 rounded border border-accent/20">While your crew works</p>
                  <p className="text-[13px] text-ink-muted leading-relaxed mt-auto">Captured, qualified and booked into your real calendar, no callback, no message slip, no double entry.</p>
               </div>
            </motion.div>
@@ -72,12 +72,12 @@ export function AutomationSection() {
               {/* Text Body */}
               <div className="p-5 flex flex-col flex-1">
                  <div className="flex items-center gap-3 mb-3">
-                   <div className="h-8 w-8 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                   <div className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <MessageSquareReply className="w-4 h-4" />
                    </div>
                    <h3 className="text-[17px] font-bold text-ink">Lead recovered</h3>
                  </div>
-                 <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2 bg-emerald-50 w-fit px-2 py-1 rounded border border-emerald-100">Instant missed-call text-back</p>
+                 <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2 bg-accent/10 w-fit px-2 py-1 rounded border border-accent/20">Instant missed-call text-back</p>
                  <p className="text-[13px] text-ink-muted leading-relaxed mt-auto">Missed a call mid-job? Max texts back instantly so the storm lead never goes cold and calls a competitor.</p>
               </div>
            </motion.div>
@@ -99,12 +99,12 @@ export function AutomationSection() {
               {/* Text Body */}
               <div className="p-5 flex flex-col flex-1">
                  <div className="flex items-center gap-3 mb-3">
-                   <div className="h-8 w-8 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                   <div className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
                       <Send className="w-4 h-4" />
                    </div>
                    <h3 className="text-[17px] font-bold text-ink">Estimate followed up</h3>
                  </div>
-                 <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2 bg-emerald-50 w-fit px-2 py-1 rounded border border-emerald-100">Follow-up on autopilot</p>
+                 <p className="text-[10px] font-bold uppercase tracking-widest text-accent mb-2 bg-accent/10 w-fit px-2 py-1 rounded border border-accent/20">Follow-up on autopilot</p>
                  <p className="text-[13px] text-ink-muted leading-relaxed mt-auto">Outbound reminders nudge open estimates and post-storm leads to a decision, automatically.</p>
               </div>
            </motion.div>
@@ -131,18 +131,18 @@ function CalendarVisualizer() {
         <div className="flex-1 h-9 rounded-lg border border-border bg-white shadow-sm" />
       </div>
       <div className="flex gap-2.5 items-center">
-        <span className="text-[10px] font-bold text-emerald-600 w-11 text-right">9:00 AM</span>
-        <div className="flex-1 h-9 rounded-lg border border-emerald-200 bg-emerald-50 relative overflow-hidden shadow-sm group-hover:scale-[1.02] transition-transform duration-300">
+        <span className="text-[10px] font-bold text-accent w-11 text-right">9:00 AM</span>
+        <div className="flex-1 h-9 rounded-lg border border-accent/30 bg-accent/10 relative overflow-hidden shadow-sm group-hover:scale-[1.02] transition-transform duration-300">
           <motion.div 
             initial={{ width: 0 }} 
             whileInView={{ width: "100%" }} 
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }} 
-            className="absolute inset-y-0 left-0 bg-emerald-200/50" 
+            className="absolute inset-y-0 left-0 bg-accent/20" 
           />
           <div className="relative z-10 flex items-center h-full px-2.5 gap-2">
-            <Check className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="text-[11px] font-bold text-emerald-800">Insp: D. Foster</span>
+            <Check className="w-3.5 h-3.5 text-accent" />
+            <span className="text-[11px] font-bold text-accent">Insp: D. Foster</span>
           </div>
         </div>
       </div>
@@ -174,12 +174,12 @@ function TextBackVisualizer() {
         whileInView={{ y: 0, opacity: 1, scale: 1 }} 
         viewport={{ once: true }}
         transition={{ delay: 0.4, type: "spring", stiffness: 300, damping: 25 }}
-        className="bg-emerald-500 text-white rounded-xl rounded-tr-sm p-3 w-[90%] self-end shadow-md relative group-hover:-translate-y-1 transition-transform duration-300"
+        className="bg-accent text-[#111] rounded-xl rounded-tr-sm p-3 w-[90%] self-end shadow-md relative group-hover:-translate-y-1 transition-transform duration-300"
       >
-        <p className="text-[11px] leading-relaxed font-medium">Sorry we missed you! We're on a roof right now. Are you calling about storm damage?</p>
+        <p className="text-[11px] leading-relaxed font-semibold">Sorry we missed you! We're on a roof right now. Are you calling about storm damage?</p>
         <div className="mt-2 flex items-center justify-end gap-1.5 opacity-90">
-          <Zap className="w-2.5 h-2.5 fill-emerald-200 text-emerald-200" />
-          <p className="text-[8px] font-bold uppercase tracking-widest text-emerald-100">Sent instantly</p>
+          <Zap className="w-2.5 h-2.5 fill-[#111] text-[#111]" />
+          <p className="text-[8px] font-bold uppercase tracking-widest text-[#111]">Sent instantly</p>
         </div>
       </motion.div>
     </div>
@@ -205,17 +205,17 @@ function FollowUpVisualizer() {
           whileInView={{ scaleY: 1 }} 
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }} 
-          className="absolute inset-0 bg-emerald-400 origin-top" 
+          className="absolute inset-0 bg-accent origin-top" 
         />
       </div>
       
-      <div className="bg-emerald-50 border border-emerald-200 shadow-sm rounded-xl p-2 w-full flex items-center gap-3 z-10 relative">
-        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 border border-emerald-200">
-          <Clock className="w-3 h-3 text-emerald-600" />
+      <div className="bg-accent/10 border border-accent/20 shadow-sm rounded-xl p-2 w-full flex items-center gap-3 z-10 relative">
+        <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 border border-accent/30">
+          <Clock className="w-3 h-3 text-accent" />
         </div>
         <div>
-          <p className="text-[8px] font-bold text-emerald-600 uppercase tracking-widest mb-0.5">Day 2</p>
-          <span className="text-[11px] font-bold text-emerald-900">Auto Follow-up Text</span>
+          <p className="text-[8px] font-bold text-accent uppercase tracking-widest mb-0.5">Day 2</p>
+          <span className="text-[11px] font-bold text-ink">Auto Follow-up Text</span>
         </div>
       </div>
 
@@ -225,7 +225,7 @@ function FollowUpVisualizer() {
           whileInView={{ scaleY: 1 }} 
           viewport={{ once: true }}
           transition={{ delay: 0.9, duration: 0.6 }} 
-          className="absolute inset-0 bg-emerald-400 origin-top" 
+          className="absolute inset-0 bg-accent origin-top" 
         />
       </div>
 
@@ -234,14 +234,14 @@ function FollowUpVisualizer() {
         whileInView={{ scale: 1, opacity: 1 }} 
         viewport={{ once: true }}
         transition={{ delay: 1.5, type: "spring", stiffness: 300 }} 
-        className="bg-emerald-500 shadow-md rounded-xl p-2 w-full flex items-center gap-3 z-10 relative group-hover:scale-[1.03] transition-transform duration-300"
+        className="bg-accent shadow-md rounded-xl p-2 w-full flex items-center gap-3 z-10 relative group-hover:scale-[1.03] transition-transform duration-300"
       >
-        <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 border border-white/20">
-          <CheckCircle2 className="w-3 h-3 text-white" />
+        <div className="w-6 h-6 rounded-full bg-[#111]/20 flex items-center justify-center shrink-0 border border-[#111]/20">
+          <CheckCircle2 className="w-3 h-3 text-[#111]" />
         </div>
         <div>
-          <p className="text-[8px] font-bold text-emerald-100 uppercase tracking-widest mb-0.5">Result</p>
-          <span className="text-[11px] font-bold text-white">Estimate Approved</span>
+          <p className="text-[8px] font-bold text-[#111]/80 uppercase tracking-widest mb-0.5">Result</p>
+          <span className="text-[11px] font-bold text-[#111]">Estimate Approved</span>
         </div>
       </motion.div>
     </div>

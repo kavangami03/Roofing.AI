@@ -20,7 +20,7 @@ export function WhySwitch() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#FBFBFA] py-16 lg:py-24">
+    <section id="why-switch" className="relative overflow-hidden bg-[#FBFBFA] py-16 lg:py-24">
       {/* Subtle Background Pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#191919 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 

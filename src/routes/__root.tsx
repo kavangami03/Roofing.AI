@@ -11,7 +11,6 @@ import { useEffect, type ReactNode } from "react";
 import { ReactLenis } from "lenis/react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -39,7 +38,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Error logged to console above
   }, [error]);
 
   return (
@@ -97,15 +96,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "SuperMIA answers every roofing call 24/7, books inspections, syncs your CRM, and dispatches crews — the AI service desk built for roofing operators." },
       { property: "og:description", content: "SuperMIA answers every roofing call 24/7, books inspections, syncs your CRM, and dispatches crews — the AI service desk built for roofing operators." },
       { name: "twitter:description", content: "SuperMIA answers every roofing call 24/7, books inspections, syncs your CRM, and dispatches crews — the AI service desk built for roofing operators." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4e3e5519-fbb9-4d07-bb1d-91040e897def/id-preview-d65c888a--8bd35778-1c03-4bdb-b14c-82464f66facb.lovable.app-1783415285374.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4e3e5519-fbb9-4d07-bb1d-91040e897def/id-preview-d65c888a--8bd35778-1c03-4bdb-b14c-82464f66facb.lovable.app-1783415285374.png" },
+      { property: "og:image", content: "/og-image.png" },
+      { name: "twitter:image", content: "/og-image.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

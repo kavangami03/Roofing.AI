@@ -1,55 +1,82 @@
+import { motion } from "framer-motion";
+import { ArrowRight, Twitter, Linkedin, Instagram, Github, CheckCircle2, Cloud } from "lucide-react";
+
 const cols = [
   { title: "Product", links: ["AI Receptionist", "Dispatch Board", "CRM Sync", "Analytics", "Integrations"] },
-  { title: "Industries", links: ["Residential Roofing", "Commercial Roofing", "Storm Restoration", "Multi-branch", "Franchises"] },
+  { title: "Industries", links: ["Residential Roofing", "Commercial", "Storm Restoration", "Multi-branch", "Franchises"] },
   { title: "Resources", links: ["Blog", "ROI Calculator", "Case Studies", "Help Center", "Status"] },
   { title: "Company", links: ["About", "Customers", "Security", "Careers", "Contact"] },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="bg-primary text-white/80">
-      <div className="container-page grid gap-12 py-16 md:grid-cols-6">
-        <div className="md:col-span-2 flex flex-col gap-5">
-          <div className="flex items-center gap-2">
-            <div className="grid h-8 w-8 place-items-center rounded-[10px] bg-white text-primary">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden="true">
-                <path d="M4 12L12 4l8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M6 12v7h12v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <circle cx="12" cy="14" r="1.5" fill="#C8A86B" />
-              </svg>
-            </div>
-            <span className="text-[17px] font-semibold text-white">SuperMIA</span>
-          </div>
-          <p className="max-w-xs text-[14px] leading-relaxed text-white/60">
-            The AI service desk built for roofing operators. Answer every call. Book every inspection. Recover every storm lead.
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {["SOC 2", "TCPA", "GDPR-ready"].map((b) => (
-              <span key={b} className="rounded-full border border-white/10 px-2.5 py-1 text-[11px] font-medium text-white/70">{b}</span>
-            ))}
-          </div>
+    <footer className="relative bg-[#111111] pt-32 pb-8 overflow-hidden border-t border-white/5">
+      
+      {/* Cinematic Ambient Glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[500px] bg-accent/5 blur-[150px] rounded-[100%] pointer-events-none" />
+
+      <div className="container-page max-w-7xl mx-auto px-4 relative z-10">
+        
+
+
+        {/* 2. Footer Links Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
+           
+           {/* Brand Column */}
+           <div className="col-span-2 lg:col-span-4 pr-0 lg:pr-12">
+              <div className="flex items-center gap-3 mb-6">
+                 <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-accent/80 to-accent text-[#111] shadow-lg">
+                    <Cloud className="h-5 w-5" />
+                 </div>
+                 <span className="text-2xl font-bold text-white tracking-tight">SuperMIA</span>
+              </div>
+              <p className="text-slate-400 text-[15px] leading-relaxed mb-8 max-w-sm">
+                The AI service desk built specifically for roofing operators. Answer every call. Book every inspection. Recover every storm lead.
+              </p>
+              <div className="flex items-center gap-4">
+                 {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
+                    <a key={i} href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-[#111] hover:border-accent transition-all duration-300">
+                       <Icon className="w-4 h-4" />
+                    </a>
+                 ))}
+              </div>
+           </div>
+
+           {/* Links Columns */}
+           {cols.map((col) => (
+              <div key={col.title} className="col-span-1 lg:col-span-2">
+                 <h3 className="text-white font-bold tracking-wide mb-6">{col.title}</h3>
+                 <ul className="space-y-4">
+                   {col.links.map(link => (
+                      <li key={link}>
+                         <a href="#" className="group flex items-center text-slate-400 hover:text-white transition-colors text-[14px] font-medium">
+                            {link}
+                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-2 transition-all duration-300 text-accent" />
+                         </a>
+                      </li>
+                   ))}
+                 </ul>
+              </div>
+           ))}
         </div>
-        {cols.map((c) => (
-          <div key={c.title}>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-white/40">{c.title}</p>
-            <ul className="mt-4 space-y-2.5">
-              {c.links.map((l) => (
-                <li key={l}><a href="#" className="text-[14px] text-white/75 transition-colors hover:text-accent">{l}</a></li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-start justify-between gap-4 py-6 text-[12.5px] text-white/50 sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} SuperMIA, Inc. Built for roofers.</p>
-          <div className="flex flex-wrap gap-5">
-            <a href="#" className="hover:text-accent">Privacy</a>
-            <a href="#" className="hover:text-accent">Terms</a>
-            <a href="#" className="hover:text-accent">Security</a>
-            <a href="#" className="hover:text-accent">Cookies</a>
-          </div>
+
+        {/* 3. Massive Typography Watermark */}
+        <div className="w-full flex justify-center items-end overflow-hidden select-none pointer-events-none mb-8 pt-12 border-t border-slate-800/50">
+           <h1 className="text-[13vw] font-black text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-transparent leading-none tracking-tighter mix-blend-plus-lighter">
+              SUPERMIA
+           </h1>
         </div>
+
+        {/* 4. Bottom Legal Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+           <p>© {new Date().getFullYear()} SUPERMIA INC. ALL RIGHTS RESERVED.</p>
+           <div className="flex gap-6">
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Cookie Settings</a>
+           </div>
+        </div>
+
       </div>
     </footer>
   );

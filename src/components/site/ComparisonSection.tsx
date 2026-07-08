@@ -1,54 +1,63 @@
 import { motion } from "framer-motion";
-import { ArrowDown, X, CheckCircle2 } from "lucide-react";
+import { 
+  Check, X, Sparkles, Voicemail, Users, Bot, 
+  PhoneCall, Zap, Calendar, MapPin, AlertCircle, 
+  Truck, RefreshCcw, Database, MessageSquare 
+} from "lucide-react";
+import React from "react";
 
 export function ComparisonSection() {
-  const pairs = [
-    {
-      colSpan: "md:col-span-7",
-      oldText: "Storm calls overflow and ring out",
-      newText: "Every storm call answered in parallel, 24/7",
-      delay: 0.1
-    },
-    {
-      colSpan: "md:col-span-5",
-      oldText: "After-hours leaks go to voicemail",
-      newText: "Emergency leaks triaged and escalated",
-      delay: 0.2
-    },
-    {
-      colSpan: "md:col-span-4",
-      oldText: "When's my crew coming? Calls jam the line",
-      newText: "Job-status calls handled without your team",
-      delay: 0.3
-    },
-    {
-      colSpan: "md:col-span-4",
-      oldText: "Open estimates never get a follow-up",
-      newText: "Open estimates followed up automatically",
-      delay: 0.4
-    },
-    {
-      colSpan: "md:col-span-4",
-      oldText: "Leads scattered across calls and texts",
-      newText: "Every lead logged in your CRM",
-      delay: 0.5
-    }
+  const features = [
+    { label: "Answers every call 24/7", icon: PhoneCall, voicemail: "—", human: "Sometimes (extra fees)", max: "Yes" },
+    { label: "Handles a storm surge in parallel", icon: Zap, voicemail: "—", human: "Limited lines", max: "Unlimited" },
+    { label: "Books inspections into your calendar", icon: Calendar, voicemail: "—", human: "Takes a message", max: "Automatically" },
+    { label: "Captures address and damage", icon: MapPin, voicemail: "—", human: "Sometimes", max: "Yes" },
+    { label: "Triages emergency leaks", icon: AlertCircle, voicemail: "—", human: "Varies", max: "Yes" },
+    { label: "Dispatches the right crew", icon: Truck, voicemail: "—", human: "—", max: "Yes" },
+    { label: "Outbound estimate follow-up", icon: RefreshCcw, voicemail: "—", human: "—", max: "Yes" },
+    { label: "Logs leads in your CRM", icon: Database, voicemail: "—", human: "—", max: "Automatically" },
+    { label: "Voice, chat, SMS and WhatsApp", icon: MessageSquare, voicemail: "—", human: "Voice only", max: "All channels" },
   ];
 
+  const renderValue = (val: string, type: 'voicemail' | 'human' | 'max') => {
+    if (val === "—") {
+      return <X className="w-4 h-4 mx-auto text-white/20" strokeWidth={2.5} />;
+    }
+    
+    if (type === 'max') {
+      return (
+        <div className="flex items-center justify-center gap-2">
+          {val === "Yes" ? (
+            <div className="w-6 h-6 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center shadow-[0_0_15px_rgba(204,170,102,0.15)]">
+               <Check className="w-3.5 h-3.5 text-accent" strokeWidth={3} />
+            </div>
+          ) : (
+            <span className="text-[14px] font-bold text-accent drop-shadow-sm">{val}</span>
+          )}
+        </div>
+      );
+    }
+
+    return <span className="font-medium text-white/50 text-[14px]">{val}</span>;
+  };
+
   return (
-    <section className="bg-[#FBFBFA] py-20 lg:py-32 border-t border-border overflow-hidden">
-      <div className="container-page max-w-[1200px]">
+    <section className="bg-[#111111] py-20 lg:py-28 relative overflow-hidden border-t border-white/5">
+      {/* Immersive Dark Background Effects */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-accent/10 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="container-page max-w-6xl mx-auto px-4 relative z-10">
         
-        {/* Header */}
-        <div className="text-center mb-16 max-w-2xl mx-auto">
+        {/* Cinematic Header */}
+        <div className="text-center mb-16 lg:mb-24 max-w-3xl mx-auto">
            <motion.div 
              initial={{ opacity: 0, y: 10 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-border shadow-sm mb-6"
+             className="mb-8 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-accent shadow-sm"
            >
-             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-             <span className="text-ink-muted text-[10px] font-bold uppercase tracking-widest">Night and day</span>
+             <Sparkles className="w-3.5 h-3.5" /> Comparison
            </motion.div>
            
            <motion.h2 
@@ -56,10 +65,10 @@ export function ComparisonSection() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="text-3xl lg:text-5xl font-bold text-ink mb-5 leading-[1.1]"
+             className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.05]"
            >
-             Your phones today, vs.<br/>
-             <span className="text-emerald-600">with Max.</span>
+             The old way vs. <br className="hidden md:block" />
+             <span className="text-accent drop-shadow-sm">The autonomous way.</span>
            </motion.h2>
            
            <motion.p 
@@ -67,58 +76,112 @@ export function ComparisonSection() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.2 }}
-             className="text-ink-muted text-[16px] leading-relaxed"
+             className="text-white/50 text-[16px] md:text-[18px] leading-relaxed max-w-2xl mx-auto"
            >
-              Same storms. Same crews. None of the missed calls.
+              Where an AI agent fits next to the alternatives most roofers already use.
            </motion.p>
         </div>
 
-        {/* Transformation Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-           {pairs.map((pair, i) => (
-              <motion.div 
-                 key={i}
-                 initial={{ opacity: 0, y: 15 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true }}
-                 transition={{ delay: pair.delay }}
-                 className={`bg-white border border-border rounded-[28px] p-6 lg:p-8 shadow-sm hover:shadow-elegant transition-all duration-300 group flex flex-col relative overflow-hidden ${pair.colSpan}`}
-              >
-                 {/* Subtle ambient gradient on hover */}
-                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                 <div className="flex flex-col relative h-full z-10">
-                    {/* The Old Way (Eliminated) */}
-                    <div className="flex items-center gap-4 opacity-40 group-hover:opacity-60 transition-opacity duration-300">
-                       <div className="w-10 h-10 rounded-xl bg-surface border border-border flex items-center justify-center shrink-0 relative z-10">
-                          <X className="w-4 h-4 text-ink-muted" />
-                       </div>
-                       <p className="text-[14px] lg:text-[15px] text-ink-muted line-through decoration-ink-muted/50 font-medium">{pair.oldText}</p>
+        {/* Ultra-Premium Glassmorphic Table */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative w-full rounded-[2rem] lg:rounded-[3rem] bg-[#1A1A1A]/60 backdrop-blur-2xl border border-white/5 shadow-2xl overflow-x-auto lg:overflow-visible p-6 lg:p-10"
+        >
+           {/* Desktop Grid Layout */}
+           <div className="min-w-[900px] grid grid-cols-[1.5fr_1fr_1fr_1.2fr] relative">
+              
+              {/* Header Row */}
+              <div className="pb-8 flex items-end">
+                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/30 ml-4">Capabilities</span>
+              </div>
+              
+              <div className="pb-8 flex flex-col items-center justify-end gap-4">
+                 <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center opacity-50">
+                    <Voicemail className="w-5 h-5 text-white" />
+                 </div>
+                 <span className="text-[15px] font-semibold text-white/60">Voicemail</span>
+              </div>
+              
+              <div className="pb-8 flex flex-col items-center justify-end gap-4">
+                 <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center opacity-50">
+                    <Users className="w-5 h-5 text-white" />
+                 </div>
+                 <span className="text-[15px] font-semibold text-white/60">Answering Service</span>
+              </div>
+              
+              <div className="pb-8 flex flex-col items-center justify-end gap-4 relative">
+                 {/* Highlight Column Backdrop (Header part) */}
+                 <div className="absolute inset-x-0 -top-6 lg:-top-10 bottom-0 bg-accent/[0.04] border-x border-t border-accent/20 rounded-t-3xl shadow-[inset_0_20px_40px_rgba(204,170,102,0.05)]" />
+                 <div className="relative z-10 flex flex-col items-center gap-4">
+                    <div className="absolute -top-5 bg-accent text-[#111] text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full shadow-[0_0_20px_rgba(204,170,102,0.4)] flex items-center gap-1.5">
+                       <Sparkles className="w-3 h-3" /> Max
                     </div>
-
-                    {/* Mathematically Centered Vertical Connecting Line */}
-                    <div className="absolute left-[19px] top-[40px] bottom-[40px] w-[2px] bg-border z-0" />
-
-                    {/* Transformation Arrow Node */}
-                    <div className="py-6 relative z-10 flex items-center">
-                       <div className="w-10 h-10 flex items-center justify-center">
-                          <div className="w-6 h-6 rounded-full bg-white border border-border flex items-center justify-center shadow-sm">
-                             <ArrowDown className="w-3 h-3 text-ink-muted" />
-                          </div>
-                       </div>
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent to-accent/80 shadow-[0_0_30px_rgba(204,170,102,0.3)] flex items-center justify-center mt-2 border border-accent/50 text-[#111]">
+                       <Bot className="w-7 h-7" />
                     </div>
+                    <span className="text-[18px] font-bold text-accent drop-shadow-md tracking-tight">SuperMIA</span>
+                 </div>
+              </div>
 
-                    {/* The New Way (Max) */}
-                    <div className="flex items-center gap-4 mt-auto relative z-10">
-                       <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-110 group-hover:bg-emerald-100 transition-all duration-300">
-                          <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+              {/* Data Rows */}
+              {features.map((feature, i) => (
+                <React.Fragment key={i}>
+                  <div className={`py-5 flex items-center gap-4 border-b border-white/5 ml-4 relative z-10 group-hover:bg-white/[0.02] ${i === features.length - 1 ? 'border-none' : ''}`}>
+                     <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                        <feature.icon className="w-4 h-4 text-white/40" />
+                     </div>
+                     <span className="text-[15px] font-medium text-white/90">{feature.label}</span>
+                  </div>
+                  
+                  <div className={`py-5 flex items-center justify-center border-b border-white/5 relative z-10 ${i === features.length - 1 ? 'border-none' : ''}`}>
+                    {renderValue(feature.voicemail, 'voicemail')}
+                  </div>
+                  
+                  <div className={`py-5 flex items-center justify-center border-b border-white/5 relative z-10 ${i === features.length - 1 ? 'border-none' : ''}`}>
+                    {renderValue(feature.human, 'human')}
+                  </div>
+                  
+                  <div className={`py-5 flex items-center justify-center relative ${i === features.length - 1 ? '' : 'border-b border-accent/10'}`}>
+                    {/* Highlight Column Backdrop (Row part) */}
+                    <div className="absolute inset-0 bg-accent/[0.04] border-x border-accent/20" />
+                    <div className="relative z-10 w-full flex justify-center">
+                       {renderValue(feature.max, 'max')}
+                    </div>
+                  </div>
+                </React.Fragment>
+              ))}
+
+              {/* Bottom Cost Row */}
+              <div className="col-span-4 mt-6">
+                 <div className="grid grid-cols-[1.5fr_1fr_1fr_1.2fr] rounded-2xl bg-[#111] border border-white/10 shadow-lg overflow-hidden relative">
+                    <div className="py-6 px-6 lg:px-8 flex items-center border-r border-white/5">
+                       <span className="text-[14px] font-bold uppercase tracking-[0.1em] text-white/50">Cost to scale</span>
+                    </div>
+                    
+                    <div className="py-6 px-4 flex items-center justify-center border-r border-white/5">
+                       <span className="font-medium text-white/40 text-[14px]">Free, but loses jobs</span>
+                    </div>
+                    
+                    <div className="py-6 px-4 flex items-center justify-center border-r border-accent/20">
+                       <span className="font-medium text-white/40 text-[14px]">Per-minute / per-call</span>
+                    </div>
+                    
+                    <div className="py-6 px-4 flex items-center justify-center relative">
+                       {/* Highlight Column Backdrop (Footer part) */}
+                       <div className="absolute inset-0 bg-accent/[0.08]" />
+                       <div className="absolute top-0 inset-x-0 h-px bg-accent/20" />
+                       <div className="relative z-10 flex items-center justify-center w-full">
+                          <span className="text-[15px] font-black text-accent drop-shadow-sm uppercase tracking-[0.1em]">Flat, no new hires</span>
                        </div>
-                       <p className="text-[18px] lg:text-[20px] font-bold text-ink leading-snug tracking-tight">{pair.newText}</p>
                     </div>
                  </div>
-              </motion.div>
-           ))}
-        </div>
+              </div>
+
+           </div>
+        </motion.div>
       </div>
     </section>
   );

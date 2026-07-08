@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, PhoneCall } from "lucide-react";
 
 const nav = [
-  { label: "Product", href: "#solution" },
-  { label: "Workflow", href: "#workflow" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Customers", href: "#case-study" },
+  { label: "Product", href: "#product" },
+  { label: "How it Works", href: "#how-it-works" },
+  { label: "Why Switch", href: "#why-switch" },
+  { label: "Customers", href: "#customers" },
+  { label: "Integration", href: "#integration" },
 ];
 
 export function SiteHeader() {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import {
   Droplet,
@@ -27,15 +27,29 @@ export function ServiceDeskJobs() {
     return () => clearInterval(interval);
   }, []);
 
-  // Spotlight mouse effect
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // Spotlight mouse effect — a glowing orb that follows directly under the cursor
+  const gridRef = useRef<HTMLDivElement>(null);
+  const spotlightRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!gridRef.current || !spotlightRef.current) return;
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      if (!gridRef.current || !spotlightRef.current) return;
+      const rect = gridRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      spotlightRef.current.style.transform = `translate(${x}px, ${y}px)`;
+      spotlightRef.current.style.opacity = "1";
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (spotlightRef.current) {
+      spotlightRef.current.style.opacity = "0";
+    }
+  }, []);
 
   // Framer Motion Variants
   const containerVariants = {
@@ -57,16 +71,12 @@ export function ServiceDeskJobs() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#050507] py-24 lg:py-36" id="jobs">
+    <section className="relative overflow-hidden bg-[#050507] py-24 lg:py-36" id="product">
       {/* Dynamic Background Glows */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-full max-w-[1200px] -translate-x-1/2 rounded-full bg-accent/10 blur-[150px] mix-blend-screen" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-[800px] w-[800px] rounded-full bg-blue-900/10 blur-[180px] mix-blend-screen" />
 
-      <div
-        className="container-page relative z-10"
-        ref={containerRef}
-        onMouseMove={handleMouseMove}
-      >
+      <div className="container-page relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -90,17 +100,30 @@ export function ServiceDeskJobs() {
 
         {/* HIGH-FIDELITY BENTO GRID */}
         <motion.div
+          ref={gridRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           className="relative grid auto-rows-[minmax(200px,auto)] grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4"
         >
-          {/* Global Grid Spotlight (Follows Mouse on Desktop) */}
+          {/* Cursor-following spotlight orb */}
           <div
-            className="pointer-events-none absolute -inset-px z-30 hidden rounded-[32px] transition-opacity duration-300 xl:block"
+            ref={spotlightRef}
+            className="pointer-events-none absolute z-30 hidden xl:block will-change-transform"
             style={{
-              background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255,255,255,0.06), transparent 40%)`,
+              width: "600px",
+              height: "600px",
+              marginLeft: "-300px",
+              marginTop: "-300px",
+              borderRadius: "50%",
+              background: "radial-gradient(circle, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 30%, transparent 70%)",
+              opacity: 0,
+              transition: "opacity 0.3s ease",
+              left: 0,
+              top: 0,
             }}
           />
 

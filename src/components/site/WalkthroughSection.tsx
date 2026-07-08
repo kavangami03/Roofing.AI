@@ -57,12 +57,12 @@ function StormCallVisualizer() {
     <div className="w-full h-full flex flex-col justify-center gap-2">
        <div className="flex justify-between items-center mb-1 px-1">
           <span className="text-[9px] font-mono text-ink-muted uppercase tracking-widest">Active Queue</span>
-          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
        </div>
        {[1, 2, 3].map(i => (
           <div key={i} className="bg-white border border-border rounded-lg p-2.5 flex items-center gap-3 shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
-             <div className="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
-                <Phone className="w-3.5 h-3.5 text-emerald-500" />
+             <div className="w-7 h-7 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                <Phone className="w-3.5 h-3.5 text-accent" />
              </div>
              <div className="space-y-1.5 w-full">
                 <div className="h-1.5 w-[70%] bg-surface-alt rounded-full" />
@@ -79,19 +79,19 @@ function BookInspectionVisualizer() {
     <div className="w-full h-full flex flex-col justify-center">
        <div className="grid grid-cols-5 gap-1.5 mb-4">
           {[...Array(10)].map((_, i) => (
-             <div key={i} className={`aspect-square rounded-md border flex items-center justify-center ${i === 7 ? 'bg-emerald-50 border-emerald-200 shadow-sm relative overflow-hidden' : 'bg-surface border-border'}`}>
+             <div key={i} className={`aspect-square rounded-md border flex items-center justify-center ${i === 7 ? 'bg-accent/10 border-accent/20 shadow-sm relative overflow-hidden' : 'bg-surface border-border'}`}>
                 {i === 7 && (
                    <>
-                      <div className="absolute inset-0 bg-emerald-500/10 animate-pulse" />
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 relative z-10" />
+                      <div className="absolute inset-0 bg-accent/20 animate-pulse" />
+                      <CheckCircle2 className="w-4 h-4 text-accent relative z-10" />
                    </>
                 )}
              </div>
           ))}
        </div>
-       <div className="bg-emerald-50 border border-emerald-100 rounded-lg p-3 flex items-center justify-center gap-2">
-          <CalendarCheck className="w-4 h-4 text-emerald-600" />
-          <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-widest">Slot Booked</span>
+       <div className="bg-accent/10 border border-accent/20 rounded-lg p-3 flex items-center justify-center gap-2">
+          <CalendarCheck className="w-4 h-4 text-accent" />
+          <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Slot Booked</span>
        </div>
     </div>
   );
@@ -124,14 +124,14 @@ function DispatchVisualizer() {
     <div className="w-full h-full flex flex-col relative overflow-hidden justify-center bg-white rounded-xl border border-border shadow-sm">
        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '8px 8px' }} />
        <div className="relative z-10 flex flex-col items-center justify-center flex-1">
-          <div className="w-[80%] border-t-[2px] border-dashed border-emerald-300 absolute top-1/2 -translate-y-1/2" />
-          <div className="w-10 h-10 rounded-full bg-emerald-50 border-2 border-white flex items-center justify-center shadow-lg relative z-10 animate-bounce">
-             <Truck className="w-5 h-5 text-emerald-600" />
+          <div className="w-[80%] border-t-[2px] border-dashed border-accent/30 absolute top-1/2 -translate-y-1/2" />
+          <div className="w-10 h-10 rounded-full bg-accent/10 border-2 border-white flex items-center justify-center shadow-lg relative z-10 animate-bounce">
+             <Truck className="w-5 h-5 text-accent" />
           </div>
        </div>
        <div className="relative z-10 bg-surface-alt border-t border-border p-3 flex justify-between items-center">
           <span className="text-[10px] font-bold text-ink-muted uppercase tracking-widest">CREW_04</span>
-          <span className="text-[9px] font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 border border-emerald-100 px-2 py-1 rounded-md">EN ROUTE</span>
+          <span className="text-[9px] font-bold text-accent uppercase tracking-widest bg-accent/10 border border-accent/20 px-2 py-1 rounded-md">EN ROUTE</span>
        </div>
     </div>
   );
@@ -146,12 +146,12 @@ function FollowUpVisualizer() {
           <div className="h-10 bg-white shadow-sm rounded-lg border border-border opacity-50" />
        </div>
        <div className="flex-1 flex flex-col gap-2 pl-1">
-          <span className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-1 flex items-center justify-center gap-1">
+          <span className="text-[10px] font-bold text-accent uppercase tracking-widest mb-1 flex items-center justify-center gap-1">
              <CheckCircle2 className="w-3.5 h-3.5" /> Won
           </span>
-          <div className="h-12 bg-emerald-50 border border-emerald-200 rounded-lg flex items-center px-3 shadow-sm relative overflow-hidden">
-             <div className="absolute inset-0 bg-emerald-500/10 animate-pulse" />
-             <div className="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.6)] relative z-10" />
+          <div className="h-12 bg-accent/10 border border-accent/20 rounded-lg flex items-center px-3 shadow-sm relative overflow-hidden">
+             <div className="absolute inset-0 bg-accent/20 animate-pulse" />
+             <div className="w-3 h-3 rounded-full bg-accent shadow-[0_0_12px_rgba(204,170,102,0.6)] relative z-10" />
           </div>
        </div>
     </div>
@@ -160,7 +160,7 @@ function FollowUpVisualizer() {
 
 export function WalkthroughSection() {
   return (
-    <section className="bg-white border-t border-border overflow-hidden">
+    <section id="how-it-works" className="bg-white border-t border-border overflow-hidden">
       
       {/* Header */}
       <div className="pt-24 lg:pt-32 pb-10 container-page max-w-4xl mx-auto text-center">
@@ -170,7 +170,7 @@ export function WalkthroughSection() {
            viewport={{ once: true }}
            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-border shadow-sm mb-6"
          >
-           <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+           <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
            <span className="text-ink-muted text-[10px] font-bold uppercase tracking-widest">Live walkthrough</span>
          </motion.div>
          
@@ -182,7 +182,7 @@ export function WalkthroughSection() {
            className="text-4xl lg:text-5xl font-bold text-ink mb-6 leading-[1.1] tracking-tight"
          >
            A day on your phones,<br/>
-           <span className="text-emerald-600">handled.</span>
+           <span className="text-accent">handled.</span>
          </motion.h2>
          
          <motion.p 
@@ -209,21 +209,21 @@ export function WalkthroughSection() {
                className="relative border-b lg:border-b-0 lg:border-r border-border p-6 lg:p-8 xl:p-10 bg-surface hover:bg-white transition-colors duration-500 group flex flex-col h-full min-h-[600px] lg:min-h-[750px] overflow-hidden"
             >
                {/* Step Number Watermark */}
-               <div className="text-[140px] xl:text-[180px] font-black text-ink/[0.02] absolute -top-4 right-0 pointer-events-none group-hover:text-emerald-500/[0.03] transition-colors duration-500 leading-none">
+               <div className="text-[140px] xl:text-[180px] font-black text-ink/[0.02] absolute -top-4 right-0 pointer-events-none group-hover:text-accent/[0.03] transition-colors duration-500 leading-none">
                   {idx + 1}
                </div>
 
                {/* Title & Sub */}
                <div className="relative z-10 mb-8 mt-4">
-                  <div className="h-14 w-14 rounded-2xl bg-white border border-border flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-all duration-300">
-                     <step.icon className="w-6 h-6 text-ink-muted group-hover:text-emerald-600 transition-colors" />
+                  <div className="h-14 w-14 rounded-2xl bg-white border border-border flex items-center justify-center mb-6 shadow-sm group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/20 transition-all duration-300">
+                     <step.icon className="w-6 h-6 text-ink-muted group-hover:text-accent transition-colors" />
                   </div>
                   <h3 className="text-2xl font-bold text-ink mb-1.5 tracking-tight">{step.title}</h3>
-                  <p className="text-[11px] text-emerald-600 font-bold uppercase tracking-widest">{step.subtitle}</p>
+                  <p className="text-[11px] text-accent font-bold uppercase tracking-widest">{step.subtitle}</p>
                </div>
 
                {/* The Custom Visualizer */}
-               <div className="relative z-10 w-full h-[180px] rounded-2xl bg-[#FBFBFA] border border-border shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] p-4 my-8 overflow-hidden group-hover:border-emerald-200 transition-colors duration-300">
+               <div className="relative z-10 w-full h-[180px] rounded-2xl bg-[#FBFBFA] border border-border shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)] p-4 my-8 overflow-hidden group-hover:border-accent/30 transition-colors duration-300">
                   {idx === 0 && <StormCallVisualizer />}
                   {idx === 1 && <BookInspectionVisualizer />}
                   {idx === 2 && <EmergencyLeakVisualizer />}
@@ -235,19 +235,19 @@ export function WalkthroughSection() {
                <div className="relative z-10 mt-auto space-y-8">
                   <div>
                      <div className="inline-flex items-center gap-1.5 px-2 py-1 rounded bg-white border border-border mb-3 shadow-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                         <span className="text-[9px] font-bold uppercase tracking-widest text-ink-muted">Max does:</span>
                      </div>
                      <p className="text-[16px] font-bold text-ink leading-snug mb-2">{step.maxDoesHeader}</p>
                      <p className="text-[14px] text-ink-muted leading-relaxed">{step.maxDoesText}</p>
                   </div>
                   
-                  <div className="bg-emerald-50/50 border border-emerald-100/50 rounded-xl p-5 group-hover:bg-emerald-50 transition-colors duration-300">
-                     <h4 className="text-[9px] font-bold uppercase tracking-widest text-emerald-600 mb-2 flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
+                  <div className="bg-accent/[0.05] border border-accent/10 rounded-xl p-5 group-hover:bg-accent/10 transition-colors duration-300">
+                     <h4 className="text-[9px] font-bold uppercase tracking-widest text-accent mb-2 flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-accent" />
                         What your team sees:
                      </h4>
-                     <p className="text-[14px] text-emerald-950 font-medium leading-snug">{step.teamSees}</p>
+                     <p className="text-[14px] text-ink font-medium leading-snug">{step.teamSees}</p>
                   </div>
                </div>
 

@@ -20,7 +20,7 @@ export function ProblemSection() {
   };
 
   return (
-    <section id="problem" className="relative overflow-hidden bg-[#FBFBFA] pb-16 lg:pb-24">
+    <section id="problem" className="relative overflow-hidden bg-[#FBFBFA] py-16 lg:py-24">
       {/* Decorative Cinematic Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-[10%] top-0 h-[600px] w-[600px] rounded-full bg-danger/5 blur-[120px]" />

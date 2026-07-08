@@ -10,7 +10,7 @@ export function IntegrationSection() {
   ];
 
   return (
-    <section className="py-24 lg:py-40 bg-[#F8FAFC] border-t border-slate-200 overflow-hidden">
+    <section id="integration" className="py-20 lg:py-28 bg-[#F8FAFC] border-t border-slate-200 overflow-hidden">
       <div className="container-page max-w-7xl mx-auto px-4">
          
          {/* Extremely Clean Header */}
@@ -19,10 +19,10 @@ export function IntegrationSection() {
                initial={{ opacity: 0, y: 10 }}
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
-               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/50 border border-blue-200/50 mb-6"
+               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 mb-6"
             >
-               <Database className="w-3.5 h-3.5 text-blue-600" />
-               <span className="text-blue-700 text-[11px] font-bold uppercase tracking-[0.15em]">Live Integration</span>
+               <Database className="w-3.5 h-3.5 text-accent" />
+               <span className="text-accent text-[11px] font-bold uppercase tracking-[0.15em]">Live Integration</span>
             </motion.div>
             <motion.h2 
                initial={{ opacity: 0, y: 10 }}
@@ -32,7 +32,7 @@ export function IntegrationSection() {
                className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6"
             >
                Leads that land <br className="hidden md:block"/>
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">straight in your CRM.</span>
+               <span className="text-accent">straight in your CRM.</span>
             </motion.h2>
             <motion.p 
                initial={{ opacity: 0, y: 10 }}
@@ -79,7 +79,7 @@ export function IntegrationSection() {
                       <motion.div 
                          animate={{ x: ["-100%", "300%"] }}
                          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                         className="absolute top-0 bottom-0 w-[150px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"
+                         className="absolute top-0 bottom-0 w-[150px] bg-gradient-to-r from-transparent via-accent to-transparent"
                       />
                   </div>
 
@@ -88,7 +88,7 @@ export function IntegrationSection() {
                       <motion.div 
                          animate={{ y: ["-100%", "300%"] }}
                          transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
-                         className="absolute left-0 right-0 h-[50px] bg-gradient-to-b from-transparent via-blue-500 to-transparent"
+                         className="absolute left-0 right-0 h-[50px] bg-gradient-to-b from-transparent via-accent to-transparent"
                       />
                   </div>
 
@@ -97,7 +97,7 @@ export function IntegrationSection() {
                      {/* Header */}
                      <div className="flex items-center justify-between border-b border-slate-100 pb-6 mb-6">
                         <div className="flex items-center gap-4">
-                           <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20">
+                           <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center shadow-lg shadow-accent/20">
                               <Cloud className="w-6 h-6 text-white" />
                            </div>
                            <div>
@@ -105,9 +105,9 @@ export function IntegrationSection() {
                               <div className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.15em] mt-0.5">JobNimbus Sync</div>
                            </div>
                         </div>
-                        <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-100 px-3 py-1.5 rounded-full">
-                           <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                           <span className="text-emerald-700 text-[9px] font-bold uppercase tracking-widest">Synced</span>
+                        <div className="flex items-center gap-1.5 bg-accent/10 border border-accent/20 px-3 py-1.5 rounded-full">
+                           <div className="w-1.5 h-1.5 bg-accent rounded-full animate-pulse" />
+                           <span className="text-accent text-[9px] font-bold uppercase tracking-widest">Synced</span>
                         </div>
                      </div>
 
@@ -140,7 +140,7 @@ export function IntegrationSection() {
                                  viewport={{ once: true, margin: "-50px" }}
                                  transition={{ delay: 0.7 + (i * 0.15), type: "spring", stiffness: 300 }}
                               >
-                                 <Check className="w-4 h-4 text-emerald-500" />
+                                 <Check className="w-4 h-4 text-accent" />
                               </motion.div>
                            </motion.div>
                         ))}
@@ -158,7 +158,7 @@ export function IntegrationSection() {
                   className="absolute top-12 -left-16"
                >
                   <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-4 w-72 pointer-events-auto">
-                     <div className="bg-emerald-50 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-emerald-600" /></div>
+                     <div className="bg-accent/10 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-accent" /></div>
                      <p className="text-slate-800 text-[13px] font-bold leading-tight">{features[0]}</p>
                   </motion.div>
                </motion.div>
@@ -169,7 +169,7 @@ export function IntegrationSection() {
                   className="absolute bottom-12 -left-16"
                >
                   <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }} className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-4 w-72 pointer-events-auto">
-                     <div className="bg-emerald-50 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-emerald-600" /></div>
+                     <div className="bg-accent/10 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-accent" /></div>
                      <p className="text-slate-800 text-[13px] font-bold leading-tight">{features[1]}</p>
                   </motion.div>
                </motion.div>
@@ -180,7 +180,7 @@ export function IntegrationSection() {
                   className="absolute top-24 -right-16"
                >
                   <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }} className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-4 w-72 pointer-events-auto">
-                     <div className="bg-emerald-50 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-emerald-600" /></div>
+                     <div className="bg-accent/10 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-accent" /></div>
                      <p className="text-slate-800 text-[13px] font-bold leading-tight">{features[2]}</p>
                   </motion.div>
                </motion.div>
@@ -191,7 +191,7 @@ export function IntegrationSection() {
                   className="absolute bottom-24 -right-16"
                >
                   <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 2 }} className="bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl p-4 shadow-xl flex items-center gap-4 w-72 pointer-events-auto">
-                     <div className="bg-emerald-50 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-emerald-600" /></div>
+                     <div className="bg-accent/10 p-2 rounded-xl shrink-0"><CheckCircle2 className="w-5 h-5 text-accent" /></div>
                      <p className="text-slate-800 text-[13px] font-bold leading-tight">{features[3]}</p>
                   </motion.div>
                </motion.div>
@@ -209,8 +209,8 @@ export function IntegrationSection() {
                   transition={{ delay: 0.2 + (i * 0.1) }}
                   className="bg-white border border-slate-200 rounded-xl p-5 flex items-center gap-4 shadow-sm"
                >
-                  <div className="bg-emerald-50 p-2 rounded-lg shrink-0">
-                     <CheckCircle2 className="w-5 h-5 text-emerald-600" />
+                  <div className="bg-accent/10 p-2 rounded-lg shrink-0">
+                     <CheckCircle2 className="w-5 h-5 text-accent" />
                   </div>
                   <p className="text-slate-700 text-[13px] font-bold leading-tight">{feature}</p>
                </motion.div>
