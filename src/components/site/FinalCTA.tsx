@@ -15,7 +15,7 @@ export function FinalCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-balance text-[40px] font-semibold leading-[1.08] tracking-tight text-[#111111] sm:text-[56px] lg:text-[64px]"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] max-w-5xl mx-auto"
           >
             Answer the next storm <span className="text-accent">before your competition does.</span>
           </motion.h2>

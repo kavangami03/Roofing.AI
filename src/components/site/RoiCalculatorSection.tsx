@@ -45,7 +45,7 @@ export function RoiCalculatorSection() {
   const recoveredValue = Math.round(valueLeftOnTable * 0.40); // 40% recovery
 
   return (
-    <section className="bg-[#050505] py-12 lg:py-16 relative overflow-hidden border-t border-white/5">
+    <section id="roi-calculator" className="bg-[#050505] py-12 lg:py-16 relative overflow-hidden border-t border-white/5">
       <style dangerouslySetInnerHTML={{__html: `
         .custom-slider::-webkit-slider-thumb {
           -webkit-appearance: none;
@@ -101,7 +101,7 @@ export function RoiCalculatorSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-6 max-w-5xl mx-auto"
           >
             What do missed calls <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#B08D45]">cost you?</span>
           </motion.h2>

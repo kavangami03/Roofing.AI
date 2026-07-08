@@ -36,7 +36,7 @@ export function ProblemSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold tracking-tight text-ink md:text-5xl lg:text-6xl mb-4 leading-[1.05]"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-4 mx-auto"
           >
             Your phones blow up exactly<br className="hidden md:block" />
             <span className="text-ink-muted">when your crew can't answer.</span>

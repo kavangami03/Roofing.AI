@@ -16,7 +16,7 @@ export function AutomationSection() {
             <Zap className="w-3 h-3 text-accent fill-accent" /> Automation
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-ink mb-4 leading-[1.1]">
+          <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-4 mx-auto">
             No missed surge.<br/>
             <span className="text-ink-muted">No lost leads. No phone tag.</span>
           </h2>

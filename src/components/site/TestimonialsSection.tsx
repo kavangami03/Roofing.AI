@@ -49,7 +49,7 @@ export function TestimonialsSection() {
                </div>
                <span className="text-emerald-700 text-[10px] font-bold uppercase tracking-widest ml-1">Trusted by owners</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+            <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] max-w-5xl mx-auto">
                The service desk that never clocks out.
             </h2>
          </div>

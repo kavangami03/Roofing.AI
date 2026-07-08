@@ -21,7 +21,7 @@ export function SolutionSection() {
                <span className="inline-block text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-4 bg-emerald-400/10 px-2 py-1 rounded border border-emerald-400/20">
                  The Solution
                </span>
-               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-[1.1]">
+               <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] text-white mb-4 max-w-5xl mx-auto">
                  Meet Max, your AI roofing service desk.
                </h2>
                <p className="text-white/60 text-[14px] leading-relaxed mb-6">

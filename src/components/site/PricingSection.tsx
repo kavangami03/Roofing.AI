@@ -78,7 +78,7 @@ export function PricingSection() {
   ];
 
   return (
-    <section className="bg-[#0a0a0a] py-20 lg:py-28 relative overflow-hidden border-t border-white/5">
+    <section id="pricing" className="bg-[#0a0a0a] py-20 lg:py-28 relative overflow-hidden border-t border-white/5">
       {/* Premium Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[600px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
@@ -86,7 +86,7 @@ export function PricingSection() {
       <div className="container-page max-w-7xl mx-auto px-4 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center mx-auto mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.1]"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-6 mx-auto"
           >
             Your whole service desk,<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#B08D45]">three ways to get it.</span>

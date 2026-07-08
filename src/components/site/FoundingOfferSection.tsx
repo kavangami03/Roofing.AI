@@ -36,7 +36,7 @@ export function FoundingOfferSection() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1, duration: 0.6 }}
-               className="text-3xl lg:text-4xl xl:text-5xl lg:leading-[1.1] font-black text-slate-900 mb-5 tracking-tight"
+               className="text-balance text-[44px] font-semibold leading-[0.8] tracking-[-0.03em] sm:text-[58px] text-[#111111] mb-5 max-w-5xl mx-auto"
              >
                Your first 2 months <br />
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B08D45] to-accent drop-shadow-sm">are on us.</span>
@@ -127,7 +127,7 @@ export function FoundingOfferSection() {
                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
                    className="flex items-center gap-5 cursor-default"
                 >
-                   <div className="text-3xl font-black text-slate-800 min-w-[90px] shrink-0">90<span className="text-[18px] text-slate-400 font-bold ml-0.5">d</span></div>
+                   <div className="text-3xl font-black text-slate-800 min-w-[90px] shrink-0">90<span className="text-[18px] text-slate-400 font-bold ml-0.5">days</span></div>
                    <div>
                       <div className="text-slate-900 font-bold text-[16px]">To prove it works</div>
                       <div className="text-slate-500 text-[14px] font-medium">cancel anytime</div>

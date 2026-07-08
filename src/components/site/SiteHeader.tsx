@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, PhoneCall } from "lucide-react";
 
 const nav = [
-  { label: "Product", href: "#product" },
-  { label: "How it Works", href: "#how-it-works" },
-  { label: "Why Switch", href: "#why-switch" },
-  { label: "Customers", href: "#customers" },
-  { label: "Integration", href: "#integration" },
+  { label: "Product", href: "/#product" },
+  { label: "How it Works", href: "/#how-it-works" },
+  { label: "Why Switch", href: "/#why-switch" },
+  { label: "Customers", href: "/#customers" },
+  { label: "Integration", href: "/#integration" },
 ];
 
 export function SiteHeader() {
@@ -31,7 +31,7 @@ export function SiteHeader() {
         }`}
       >
         <div className="flex items-center justify-between gap-6">
-          <a href="#top" className="flex items-center gap-2.5">
+          <a href="/#top" className="flex items-center gap-2.5">
             <Logo />
             <span className="text-[16px] font-semibold tracking-tight text-[#111111]">
               SuperMIA
@@ -53,14 +53,14 @@ export function SiteHeader() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="#login"
+              href="/#login"
               className="group relative rounded-full py-1.5 px-4 text-[13.5px] font-medium text-[#5F5F5F] transition-all duration-300 hover:text-[#111111]"
             >
               <span className="absolute inset-0 -z-10 scale-90 rounded-full bg-[#F3F2EE] opacity-0 transition-all duration-200 ease-out group-hover:scale-100 group-hover:opacity-100" />
               Sign in
             </a>
             <a
-              href="#demo"
+              href="/#demo"
               className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-[12px] bg-primary px-5 h-[40px] text-[13.5px] font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5"
             >
               <span className="absolute inset-0 translate-y-full bg-accent transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
@@ -127,7 +127,7 @@ export function SiteHeader() {
               </nav>
               <div className="mt-auto flex flex-col gap-3 pt-6">
                 <a
-                  href="#demo"
+                  href="/#demo"
                   onClick={() => setOpen(false)}
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-[14px] bg-primary h-[56px] text-sm font-semibold text-white shadow-sm transition-all"
                 >
@@ -137,7 +137,7 @@ export function SiteHeader() {
                   </span>
                 </a>
                 <a
-                  href="#login"
+                  href="/#login"
                   onClick={() => setOpen(false)}
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-[14px] border border-primary bg-transparent h-[56px] text-sm font-semibold text-primary transition-all"
                 >

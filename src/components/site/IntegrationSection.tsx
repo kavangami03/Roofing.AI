@@ -29,7 +29,7 @@ export function IntegrationSection() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.1 }}
-               className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-[1.1] mb-6"
+               className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-6 max-w-5xl mx-auto"
             >
                Leads that land <br className="hidden md:block"/>
                <span className="text-accent">straight in your CRM.</span>

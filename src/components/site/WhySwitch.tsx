@@ -41,7 +41,7 @@ export function WhySwitch() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-bold tracking-tight text-[#111] md:text-5xl lg:text-6xl mb-6 leading-[1.05]"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-6 max-w-5xl mx-auto"
           >
             Every call answered.<br />
             <span className="text-ink-muted">Every inspection booked.</span>
@@ -51,7 +51,7 @@ export function WhySwitch() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mx-auto max-w-3xl text-lg text-ink-muted leading-relaxed"
+            className="mx-auto max-w-4xl text-lg text-ink-muted leading-relaxed"
           >
             Storm season floods your phones in minutes. Max answers every line at once, books the inspections, and flags the emergency leaks, so you capture the surge instead of missing it.
           </motion.p>

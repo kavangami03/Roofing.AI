@@ -42,7 +42,7 @@ export function ComparisonSection() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: 0.1 }}
-             className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.05]"
+             className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-6 max-w-5xl mx-auto"
            >
              The old way vs. <br className="hidden md:block" />
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-[#B08D45] drop-shadow-sm">The autonomous way.</span>

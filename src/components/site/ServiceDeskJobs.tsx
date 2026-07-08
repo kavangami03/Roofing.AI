@@ -88,7 +88,7 @@ export function ServiceDeskJobs() {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-accent backdrop-blur-md">
             <Zap className="h-4 w-4" /> One service desk, every call
           </div>
-          <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-6 max-w-5xl mx-auto">
             Everything your phones need, <br className="hidden md:block" />
             handled by one AI agent.
           </h2>

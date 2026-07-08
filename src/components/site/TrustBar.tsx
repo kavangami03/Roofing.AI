@@ -14,7 +14,7 @@ export function TrustBar() {
           <span className="w-fit mx-auto rounded-full bg-accent/15 border border-accent/30 px-3 py-1 text-[11px] font-bold tracking-wider text-accent uppercase">
             Ops Integrations
           </span>
-          <h2 className="text-balance text-[36px] sm:text-[48px] font-bold leading-[1.08] tracking-[-0.03em] text-[#111111]">
+          <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] max-w-5xl mx-auto">
             Runs on the tools your shop already uses.
           </h2>
           <p className="text-[16px] leading-[1.6] text-ink-muted">

@@ -179,7 +179,7 @@ export function WalkthroughSection() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ delay: 0.1 }}
-           className="text-4xl lg:text-5xl font-bold text-ink mb-6 leading-[1.1] tracking-tight"
+           className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-6 max-w-5xl mx-auto"
          >
            A day on your phones,<br/>
            <span className="text-accent">handled.</span>

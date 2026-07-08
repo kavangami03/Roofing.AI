@@ -26,7 +26,7 @@ export function CaseStudySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 tracking-tight leading-[1.1]"
+                className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-5 max-w-5xl mx-auto"
              >
                 Same storms.<br/>
                 <span className="text-accent">Different booking sheet.</span>

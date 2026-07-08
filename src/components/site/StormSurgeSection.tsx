@@ -15,7 +15,7 @@ export function StormSurgeSection() {
               Storm surge, captured
             </div>
             
-            <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
+            <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-white mb-6 max-w-5xl mx-auto">
               The storm only pays<br/>
               <span className="text-white/40">if you answer the phone.</span>
             </h2>

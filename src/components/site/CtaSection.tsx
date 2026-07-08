@@ -3,7 +3,7 @@ import { ArrowRight, Play, ShieldCheck } from "lucide-react";
 
 export function CtaSection() {
   return (
-    <section className="bg-white py-20 lg:py-24 relative overflow-hidden">
+    <section id="demo" className="bg-white py-20 lg:py-24 relative overflow-hidden">
       {/* Super Subtle Background Accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.015] pointer-events-none" />
@@ -24,7 +24,7 @@ export function CtaSection() {
           </div>
 
           {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight mb-6 leading-[1.1]">
+          <h2 className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-6 max-w-5xl mx-auto">
             Be the roofer who <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B08D45] to-accent">answers first.</span>
           </h2>

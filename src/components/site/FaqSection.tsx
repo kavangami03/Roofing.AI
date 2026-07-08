@@ -65,7 +65,7 @@ export function FaqSection() {
   ];
 
   return (
-    <section className="bg-[#F8FAFC] py-20 lg:py-28 relative overflow-hidden border-t border-slate-200">
+    <section id="faq" className="bg-[#F8FAFC] py-20 lg:py-28 relative overflow-hidden border-t border-slate-200">
       {/* Light Theme & Gold Background Ambience */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/10 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#B08D45]/10 blur-[100px] rounded-full pointer-events-none" />
@@ -89,7 +89,7 @@ export function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-[1.1]"
+            className="text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[58px] lg:text-[72px] text-[#111111] mb-6 max-w-5xl mx-auto"
           >
             Roofing answering service: <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B08D45] to-accent drop-shadow-sm">questions roofers ask.</span>
