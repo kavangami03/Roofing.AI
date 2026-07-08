@@ -209,15 +209,13 @@ const DotField = memo(({
         if (p.sparkle) {
           const hash = ((i * 2654435761) ^ (frameCount >> 3)) >>> 0;
           if ((hash % 100) < 3) {
-            ctx!.moveTo(drawX + rad * 1.8, drawY);
-            ctx!.arc(drawX, drawY, rad * 1.8, 0, TWO_PI);
+            const r = rad * 1.8;
+            ctx!.rect(drawX - r, drawY - r, r * 2, r * 2);
           } else {
-            ctx!.moveTo(drawX + rad, drawY);
-            ctx!.arc(drawX, drawY, rad, 0, TWO_PI);
+            ctx!.rect(drawX - rad, drawY - rad, rad * 2, rad * 2);
           }
         } else {
-          ctx!.moveTo(drawX + rad, drawY);
-          ctx!.arc(drawX, drawY, rad, 0, TWO_PI);
+          ctx!.rect(drawX - rad, drawY - rad, rad * 2, rad * 2);
         }
       }
 

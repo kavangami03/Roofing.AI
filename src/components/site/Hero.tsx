@@ -50,11 +50,11 @@ export function Hero() {
       {/* Interactive Dot Field */}
       <div className="absolute inset-0 -z-10 pointer-events-auto">
         <DotField
-          dotRadius={1.5}
-          dotSpacing={16}
+          dotRadius={2}
+          dotSpacing={22}
           bulgeStrength={80}
           glowRadius={300}
-          sparkle={true}
+          sparkle={false}
           waveAmplitude={0}
           gradientFrom="rgba(0, 0, 0, 0.9)"
           gradientTo="rgba(0, 0, 0, 0.4)"
