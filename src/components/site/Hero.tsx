@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import DotField from "../ui/DotField";
 import {
   PhoneCall,
   ArrowRight,
@@ -22,7 +23,7 @@ const trust = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-28 md:pt-36 bg-background">
+    <section id="top" className="relative isolate overflow-hidden pt-28 md:pt-36 bg-background">
       {/* Background video related to roofing */}
       <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden opacity-[0.16] transition-opacity duration-1000">
         <video
@@ -46,7 +47,22 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10 grid-noise" />
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white blur-3xl" />
 
-      <div className="container-page relative flex flex-col items-center">
+      {/* Interactive Dot Field */}
+      <div className="absolute inset-0 -z-10 pointer-events-auto">
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={16}
+          bulgeStrength={80}
+          glowRadius={300}
+          sparkle={true}
+          waveAmplitude={0}
+          gradientFrom="rgba(0, 0, 0, 0.9)"
+          gradientTo="rgba(0, 0, 0, 0.4)"
+          glowColor="transparent"
+        />
+      </div>
+
+      <div className="container-page relative z-10 flex flex-col items-center">
         {/* Centered Editorial Header */}
         <div className="flex max-w-4xl flex-col items-center text-center gap-6">
           <motion.a
