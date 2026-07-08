@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import DotField from "../ui/DotField";
 import {
   PhoneCall,
   ArrowRight,
@@ -46,21 +45,6 @@ export function Hero() {
       {/* soft radial light */}
       <div className="pointer-events-none absolute inset-0 -z-10 grid-noise" />
       <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-white blur-3xl" />
-
-      {/* Interactive Dot Field */}
-      <div className="absolute inset-0 -z-10 pointer-events-auto">
-        <DotField
-          dotRadius={2}
-          dotSpacing={22}
-          bulgeStrength={80}
-          glowRadius={300}
-          sparkle={false}
-          waveAmplitude={0}
-          gradientFrom="rgba(0, 0, 0, 0.9)"
-          gradientTo="rgba(0, 0, 0, 0.4)"
-          glowColor="transparent"
-        />
-      </div>
 
       <div className="container-page relative z-10 flex flex-col items-center">
         {/* Centered Editorial Header */}
