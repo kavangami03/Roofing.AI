@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Twitter, Linkedin, Instagram, Github, CheckCircle2, Cloud } from "lucide-react";
+import { ArrowRight, Twitter, Linkedin, Instagram, Github, CheckCircle2, Cloud, ArrowUp } from "lucide-react";
 
 const cols = [
   { 
@@ -56,7 +56,7 @@ export function SiteFooter() {
               </p>
               <div className="flex items-center gap-4">
                  {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
-                    <a key={i} href="#" className="w-10 h-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-[#111] hover:border-accent transition-all duration-300">
+                    <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-accent hover:text-black hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-sm hover:shadow-accent/25">
                        <Icon className="w-4 h-4" />
                     </a>
                  ))}
@@ -97,9 +97,17 @@ export function SiteFooter() {
              <span className="text-slate-700 font-light">|</span>
              <span>All rights reserved.</span>
            </div>
-           <div className="flex gap-6">
+           <div className="flex gap-6 items-center">
               <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+              <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-700 transition-colors ml-4"
+                aria-label="Back to top"
+                title="Back to top"
+              >
+                 <ArrowUp className="w-4 h-4" />
+              </button>
            </div>
         </div>
 
