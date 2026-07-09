@@ -41,7 +41,7 @@ export function SiteFooter() {
 
 
         {/* 2. Footer Links Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-10 gap-12 lg:gap-8 mb-24">
+        <div className="grid grid-cols-2 lg:grid-cols-10 gap-12 lg:gap-8 mb-10">
            
            {/* Brand Column */}
            <div className="col-span-2 lg:col-span-4 pr-0 lg:pr-12">
@@ -82,7 +82,7 @@ export function SiteFooter() {
         </div>
 
         {/* 3. Massive Typography Watermark */}
-        <div className="w-full flex justify-center items-end overflow-hidden select-none pointer-events-none mb-8 pt-12 border-t border-slate-800/50">
+        <div className="w-full flex justify-center items-end overflow-hidden select-none pointer-events-none mb-8 border-t border-slate-800/50">
            <h1 className="text-[13vw] font-black text-transparent bg-clip-text bg-gradient-to-b from-white/10 to-transparent leading-none tracking-tighter mix-blend-plus-lighter">
               SUPERMIA
            </h1>

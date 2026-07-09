@@ -62,11 +62,10 @@ function FullWidthPanel({ section, index, total }: { section: any, index: number
       ref={panelRef}
       className={`sticky w-full h-screen border-t border-white/10 shadow-[0_-20px_50px_-15px_rgba(0,0,0,0.7)] flex flex-col items-center justify-center overflow-hidden ${section.bg}`}
       style={{ 
-        // Create a perfect "folder tab" stacking effect. Each tab is 60px lower than the previous.
-        // We start stacking at 10vh so it sits nicely under the navbar.
-        top: `calc(10vh + ${index * 60}px)`, 
+        // Full screen stack up: every card sticks exactly to the top, covering the previous one entirely.
+        // This gives 100% of the screen height to the content, perfect for small screens.
+        top: 0, 
         zIndex: index + 10,
-        // Ensure no weird empty space. 
         marginBottom: 0
       }}
     >
